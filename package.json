@@ -1,0 +1,102 @@
+{
+  "name": "indusagi",
+  "version": "0.12.12",
+  "description": "All-in-one package that re-exports indusagi-ai, indusagi-agent, and indusagi-tui. Now with Kimi (Moonshot AI) support!",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./ai": {
+      "types": "./dist/ai.d.ts",
+      "import": "./dist/ai.js"
+    },
+    "./agent": {
+      "types": "./dist/agent.d.ts",
+      "import": "./dist/agent.js"
+    },
+    "./tui": {
+      "types": "./dist/tui.d.ts",
+      "import": "./dist/tui.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "vitest --run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@mariozechner/clipboard": "^0.3.0",
+    "@mariozechner/jiti": "^2.6.2",
+    "@silvia-odwyer/photon-node": "^0.3.4",
+    "chalk": "^5.5.0",
+    "cli-highlight": "^2.1.11",
+    "diff": "^8.0.2",
+    "file-type": "^21.1.1",
+    "glob": "^11.0.3",
+    "marked": "^15.0.12",
+    "minimatch": "^10.1.1",
+    "proper-lockfile": "^4.1.2",
+    "yaml": "^2.8.2",
+    "@lmstudio/sdk": "^1.5.0",
+    "docx-preview": "^0.3.7",
+    "jszip": "^3.10.1",
+    "lucide": "^0.544.0",
+    "ollama": "^0.6.0",
+    "pdfjs-dist": "5.4.394",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+    "@anthropic-ai/sdk": "0.71.2",
+    "@aws-sdk/client-bedrock-runtime": "^3.966.0",
+    "@google/genai": "1.34.0",
+    "@mistralai/mistralai": "1.10.0",
+    "@sinclair/typebox": "^0.34.41",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "openai": "6.10.0",
+    "partial-json": "^0.1.7",
+    "proxy-agent": "^6.5.0",
+    "undici": "^7.19.1",
+    "zod-to-json-schema": "^3.24.6",
+    "@types/mime-types": "^2.1.4",
+    "get-east-asian-width": "^1.3.0",
+    "mime-types": "^3.0.1"
+  },
+  "peerDependencies": {
+    "@mariozechner/mini-lit": "^0.2.0",
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.2.4"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "agent",
+    "tui",
+    "cli",
+    "bundle"
+  ],
+  "author": "Varun Israni",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varunisrani/indusagi-ts.git",
+    "directory": "indusagi"
+  },
+  "homepage": "https://www.npmjs.com/package/indusagi",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
