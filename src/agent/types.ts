@@ -152,6 +152,8 @@ export interface AgentToolResult<T> {
 	content: (TextContent | ImageContent)[];
 	// Details to be displayed in a UI or logged
 	details: T;
+	// Whether the result represents an error
+	isError?: boolean;
 }
 
 // Callback for streaming tool execution updates

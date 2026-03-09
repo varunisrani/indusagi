@@ -1,6 +1,6 @@
 import type { AgentTool } from "../types.js";
 
-export type ToolCategory = "core" | "search" | "management" | "web" | "filesystem";
+export type ToolCategory = "core" | "search" | "management" | "web" | "filesystem" | "mcp";
 
 export interface ToolMetadata {
 	name: string;

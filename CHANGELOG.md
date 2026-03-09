@@ -1,5 +1,51 @@
 # Changelog
 
+## [0.12.15]
+
+### Added
+- **GPT-5.4 Models**: Added full support for GPT-5.4 model family across all providers
+  - `gpt-5.4` (base model with 272k context window)
+  - `gpt-5.4-codex` (coding optimized variant)
+  - Available on: openai, azure-openai-responses, openai-codex, github-copilot, opencode, openrouter providers
+- **GPT-5.3 Models**: Added GPT-5.3 variants to match GPT-5.4 availability
+  - `gpt-5.3` and `gpt-5.3-codex` across all providers
+- **Memory Support**: Full integration with indusagi/memory module
+  - In-memory storage backend
+  - Vector store integration for semantic search
+  - OpenAI embedder support
+  - Memory context injection into agent sessions
+- **MCP (Model Context Protocol)**: Enhanced MCP support
+  - Fixed MCP debug logging for cleaner CLI output
+  - Improved error handling and connection management
+  - Support for multiple MCP server configurations
+  - Suppressed debug messages by default (enable with INDUSAGI_DEBUG env var)
+
+### Fixed
+- **MCP Debug Output**: Suppressed verbose MCP debug messages in interactive CLI
+  - Cleaner user experience in terminal mode
+  - Debug messages available when INDUSAGI_DEBUG=1
+- **Import Paths**: Fixed all relative imports with .js extensions for ESM compatibility
+- **Build Issues**: Resolved TypeScript compilation errors
+  - Excluded observability module due to unresolved type compatibility issues (will be addressed in future release)
+
+### Notes
+- Observability module functionality is deferred to maintain core functionality
+- All main modules (ai, agent, tui, mcp) are fully functional and tested
+
+## [0.12.13]
+
+### Added
+- **Kimi K2.5 Reasoning**: Enabled thinking/reasoning for all Kimi K2.5 models
+  - `kimi-k2.5` (kimi provider): `reasoning: true`
+  - `kimi-for-coding` (kimi-coding provider): `reasoning: true`
+  - `k2p5` (kimi-coding provider, legacy alias): `reasoning: true`
+
+### Fixed
+- **GLM-5 Context Overflow**: Fixed compaction error when using GLM-5 model
+  - `contextWindow`: 204,800 → 200,000
+  - `maxTokens`: 131,072 → 32,768
+  - Prevents "input tokens exceeds maximum context length" errors during session compaction
+
 ## [0.12.12]
 
 ### Added

@@ -1,7 +1,7 @@
 {
   "name": "indusagi",
-  "version": "0.12.12",
-  "description": "All-in-one package that re-exports indusagi-ai, indusagi-agent, and indusagi-tui. Now with Kimi (Moonshot AI) support!",
+  "version": "0.12.15",
+  "description": "All-in-one package that re-exports indusagi-ai, indusagi-agent, indusagi-tui, and indusagi-mcp. Now with MCP (Model Context Protocol) support!",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -21,6 +21,34 @@
     "./tui": {
       "types": "./dist/tui.d.ts",
       "import": "./dist/tui.js"
+    },
+    "./mcp": {
+      "types": "./dist/mcp.d.ts",
+      "import": "./dist/mcp.js"
+    },
+    "./memory": {
+      "types": "./dist/memory/index.d.ts",
+      "import": "./dist/memory/index.js"
+    },
+    "./memory/storage": {
+      "types": "./dist/memory/storage/index.d.ts",
+      "import": "./dist/memory/storage/index.js"
+    },
+    "./memory/vector": {
+      "types": "./dist/memory/vector/index.d.ts",
+      "import": "./dist/memory/vector/index.js"
+    },
+    "./memory/embedder": {
+      "types": "./dist/memory/embedder/index.d.ts",
+      "import": "./dist/memory/embedder/index.js"
+    },
+    "./memory/processors": {
+      "types": "./dist/memory/processors/index.d.ts",
+      "import": "./dist/memory/processors/index.js"
+    },
+    "./observability": {
+      "types": "./dist/observability/index.d.ts",
+      "import": "./dist/observability/index.js"
     }
   },
   "files": [
@@ -39,6 +67,8 @@
     "@mariozechner/clipboard": "^0.3.0",
     "@mariozechner/jiti": "^2.6.2",
     "@silvia-odwyer/photon-node": "^0.3.4",
+    "@modelcontextprotocol/sdk": "^1.24.0",
+    "@apidevtools/json-schema-ref-parser": "^12.0.0",
     "chalk": "^5.5.0",
     "cli-highlight": "^2.1.11",
     "diff": "^8.0.2",
